@@ -1,0 +1,466 @@
+/* ─────────────────────────────────────────────
+   HERO SECTION — CSS Module
+   Wisata Bengkulu
+───────────────────────────────────────────── */
+
+/* ── Root container ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-geist-sans, 'Inter', 'Segoe UI', sans-serif);
+}
+
+/* ─────────────────────────────────────────────
+   BACKGROUND LAYERS
+───────────────────────────────────────────── */
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: opacity;
+}
+
+.bgLayerPrev {
+  opacity: 1;
+  z-index: 0;
+}
+
+.bgLayerActive {
+  z-index: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.bgFadingIn {
+  opacity: 0;
+}
+
+.bgVisible {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────
+   OVERLAYS
+───────────────────────────────────────────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.70) 0%,
+    rgba(0, 0, 0, 0.30) 60%,
+    rgba(0, 0, 0, 0.50) 100%
+  );
+  z-index: 2;
+}
+
+/* Bottom fog / cloud effect */
+.fogBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    transparent 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Left gradient for text readability */
+.gradientLeft {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    transparent 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────
+   WATERMARK TEXT
+───────────────────────────────────────────── */
+.watermark {
+  position: absolute;
+  bottom: -0.1em;
+  left: -0.02em;
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.10);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 4;
+  line-height: 1;
+  animation: watermarkFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes watermarkFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────────────
+   MAIN CONTENT (center-left)
+───────────────────────────────────────────── */
+.contentWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(2rem, 6vw, 7rem);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.content {
+  max-width: 600px;
+  pointer-events: all;
+  animation: contentSlideIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes contentSlideIn {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide counter */
+.slideCounter {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 1.4rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+}
+
+.slideCounterActive {
+  color: #f0c060;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.slideCounterSep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+
+.slideCounterTotal {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Title block */
+.titleWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.accentBar {
+  flex-shrink: 0;
+  width: 5px;
+  height: 100%;
+  min-height: 70px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #f0c060, #e05a2b);
+  align-self: stretch;
+  box-shadow: 0 0 16px rgba(240, 192, 96, 0.5);
+  animation: accentGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes accentGlow {
+  from { box-shadow: 0 0 10px rgba(240, 192, 96, 0.4); }
+  to   { box-shadow: 0 0 28px rgba(240, 192, 96, 0.9); }
+}
+
+.title {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+  margin-bottom: 2.2rem;
+  max-width: 480px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #f0c060 0%, #e05a2b 100%);
+  color: #1a0a00;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  box-shadow: 0 6px 28px rgba(224, 90, 43, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.25), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.ctaButton:hover::before { opacity: 1; }
+
+.ctaButton:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(224, 90, 43, 0.65);
+  filter: brightness(1.05);
+}
+
+.ctaButton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ─────────────────────────────────────────────
+   ORBITAL NAVIGATION (right side)
+───────────────────────────────────────────── */
+.orbitalNav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: clamp(180px, 25vw, 320px);
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* SVG arcs backdrop */
+.orbitalSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Each thumbnail button */
+.orbitItem {
+  position: absolute;
+  transform: translate(0, -50%); /* Base translation */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  pointer-events: all;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 21;
+}
+
+.orbitItem:hover {
+  transform: translate(0, -50%) scale(1.05);
+}
+
+/* Thumbnail image */
+.orbitThumb {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.8);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.orbitItemActive .orbitThumb {
+  width: 65px;
+  height: 65px;
+  filter: brightness(1) saturate(1.1);
+  box-shadow: 0 4px 20px rgba(240, 192, 96, 0.4);
+}
+
+/* Static outer ring for active item */
+.orbitOuterRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+/* Rotating dashed ring (active only) */
+.orbitRing {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px dashed rgba(240, 192, 96, 0.8);
+  pointer-events: none;
+  animation: orbitSpin 8s linear infinite;
+  z-index: 2;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Text for inactive circles */
+.orbitText {
+  position: absolute;
+  right: calc(100% + 15px); /* Position text to the left of the circle */
+  text-align: right;
+  white-space: nowrap;
+  opacity: 0.9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.orbitText h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.orbitText p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #d1d5db;
+  font-weight: 400;
+}
+
+.orbitTextActive h4 {
+  color: #f0c060;
+  text-shadow: 0 2px 8px rgba(240, 192, 96, 0.4);
+}
+
+.orbitTextActive p {
+  color: #fde68a;
+}
+
+/* ─────────────────────────────────────────────
+   PROGRESS / DOT INDICATORS (bottom)
+───────────────────────────────────────────── */
+.progressBar {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.progressDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: width 0.35s ease, background 0.35s ease, border-radius 0.35s ease;
+  padding: 0;
+}
+
+.progressDot:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.progressDotActive {
+  width: 32px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #f0c060, #e05a2b);
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding: 0 1.5rem;
+    align-items: flex-end;
+    padding-bottom: 7rem;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .watermark {
+    font-size: clamp(60px, 20vw, 120px);
+  }
+
+  .orbitalNav {
+    width: 100px;
+  }
+
+  .orbitThumb {
+    width: 45px;
+    height: 45px;
+  }
+
+  .orbitItemActive .orbitThumb {
+    width: 45px;
+    height: 45px;
+  }
+
+  .orbitRing {
+    inset: -10px;
+  }
+
+  .orbitConnector {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+  }
+}
