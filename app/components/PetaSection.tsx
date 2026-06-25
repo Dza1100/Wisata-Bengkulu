@@ -6,9 +6,14 @@ export default function PetaSection() {
 
   return (
     <section className={styles.section} id="peta" aria-labelledby="peta-title">
-      <div className={styles.header}>
-        <h2 id="peta-title" className={styles.title}>Jelajahi Peta Bengkulu</h2>
-        <p className={styles.subtitle}>
+      <div className="flex flex-col items-center text-center space-y-4 mb-16 w-full max-w-[1600px] mx-auto">
+        <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
+          Peta Interaktif
+        </span>
+        <h2 id="peta-title" className="text-3xl md:text-5xl font-black text-[#1c2b3a] uppercase font-[family-name:var(--font-heading)]">
+          Jelajahi Peta Bengkulu
+        </h2>
+        <p className="text-[#3a5060] max-w-2xl text-base md:text-lg">
           Temukan keajaiban alam dan surga tersembunyi di sepanjang garis pantai barat Sumatera melalui pandangan satelit interaktif kami.
         </p>
       </div>

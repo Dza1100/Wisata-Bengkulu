@@ -47,18 +47,18 @@ const kulinerData: FoodItem[] = [
 
 export default function KulinerSection() {
   return (
-    <section className="bg-zinc-950 py-24 px-6 md:px-12 overflow-hidden">
+    <section className="bg-[#f5f0e8] py-24 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Header Text */}
         <div className="flex flex-col items-center text-center space-y-4 mb-20">
-          <span className="text-orange-500 font-bold uppercase tracking-widest text-sm">
+          <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
             Cita Rasa
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white">
+          <h2 className="text-3xl md:text-5xl font-black text-[#1c2b3a] font-[family-name:var(--font-heading)]">
             Kuliner Khas Bengkulu
           </h2>
-          <p className="text-zinc-400 max-w-2xl text-base md:text-lg">
+          <p className="text-[#3a5060] max-w-2xl text-base md:text-lg">
             Manjakan lidah Anda dengan perpaduan rempah otentik dan resep warisan leluhur yang tak akan Anda temukan di tempat lain.
           </p>
         </div>

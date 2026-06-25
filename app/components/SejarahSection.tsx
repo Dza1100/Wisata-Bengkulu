@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function SejarahSection() {
   return (
-    <section className="bg-[#0a0a0a] py-24 px-6 md:px-16 min-h-[100vh] flex flex-col justify-center font-sans relative overflow-hidden">
+    <section className="bg-[#f5f0e8] py-24 px-6 md:px-16 min-h-[100vh] flex flex-col justify-center font-sans relative overflow-hidden">
       
       {/* Header Text */}
       <div className="flex flex-col items-center text-center space-y-4 mb-16 w-full max-w-[1400px] mx-auto z-20">
-        <span className="text-[#b5c735] font-bold uppercase tracking-widest text-sm">
+        <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
           Jejak Waktu
         </span>
-        <h2 className="text-3xl md:text-5xl font-black text-white uppercase">
+        <h2 className="text-3xl md:text-5xl font-black text-[#1c2b3a] font-[family-name:var(--font-heading)] uppercase">
           Sejarah Bengkulu
         </h2>
       </div>
@@ -19,16 +19,16 @@ export default function SejarahSection() {
         {/* Left Column - Text */}
         <div className="lg:col-span-5 flex flex-col justify-between py-12 lg:py-24 z-30 relative order-2 lg:order-1">
           <div className="max-w-[420px]">
-            <p className="text-gray-300 text-xl lg:text-[22px] leading-[1.6] font-light tracking-wide">
+            <p className="text-[#3a5060] text-xl lg:text-[22px] leading-[1.6] font-light tracking-wide">
               Kami telah merangkum perjalanan sejarah yang kaya di Bengkulu untuk Anda.<br />
               Anda akan melintasi tiga era utama:<br />
-              <span className="text-[#b5c735] font-normal">Masa Inggris, Pengasingan, dan Kemerdekaan.</span>
+              <span className="text-[#2c6e8a] font-normal">Masa Inggris, Pengasingan, dan Kemerdekaan.</span>
             </p>
           </div>
           
           <div className="max-w-[420px] mt-16 lg:mt-0">
-            <p className="text-gray-300 text-xl lg:text-[22px] leading-[1.6] font-light tracking-wide">
-              Tidak perlu repot mencari banyak literatur — semua peristiwa kunci telah terorganisir. Kami akan menunjukkan lokasinya, peninggalannya, dan tokohnya, agar Anda dapat sekadar <span className="text-[#b5c735] font-normal">menikmati jejak sejarahnya.</span>
+            <p className="text-[#3a5060] text-xl lg:text-[22px] leading-[1.6] font-light tracking-wide">
+              Tidak perlu repot mencari banyak literatur — semua peristiwa kunci telah terorganisir. Kami akan menunjukkan lokasinya, peninggalannya, dan tokohnya, agar Anda dapat sekadar <span className="text-[#2c6e8a] font-normal">menikmati jejak sejarahnya.</span>
             </p>
           </div>
         </div>
@@ -36,14 +36,14 @@ export default function SejarahSection() {
         {/* Right Column - Timeline (Desktop) */}
         <div className="lg:col-span-7 relative mt-16 lg:mt-0 hidden lg:block h-[900px] z-20 order-1 lg:order-2">
           {/* Vertical Line */}
-          <div className="absolute top-8 bottom-8 left-[50%] w-[1px] bg-white/20" />
+          <div className="absolute top-8 bottom-8 left-[50%] w-[1px] bg-[#2c6e8a]/25" />
 
           {/* --- POINT 1 --- */}
           <div className="absolute top-[120px] left-[50%] w-0 h-0 z-30">
-            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#e5e5e5]" />
+            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#b87333]" />
             <div className="absolute top-0 right-8 -translate-y-1/2 text-right whitespace-nowrap">
-              <p className="text-gray-400 text-lg mb-1 tracking-wider">1685 - 1824</p>
-              <h3 className="text-white text-3xl font-semibold tracking-wide">Masa Inggris</h3>
+              <p className="text-[#b87333] text-lg mb-1 tracking-wider">1685 - 1824</p>
+              <h3 className="text-[#1c2b3a] font-[family-name:var(--font-heading)] text-3xl font-semibold tracking-wide">Masa Inggris</h3>
             </div>
           </div>
           {/* Images Point 1 */}
@@ -68,10 +68,10 @@ export default function SejarahSection() {
 
           {/* --- POINT 2 --- */}
           <div className="absolute top-[400px] left-[50%] w-0 h-0 z-30">
-            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#e5e5e5]" />
+            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#b87333]" />
             <div className="absolute top-0 left-8 -translate-y-1/2 text-left whitespace-nowrap">
-              <p className="text-gray-400 text-lg mb-1 tracking-wider">1938 - 1942</p>
-              <h3 className="text-white text-3xl font-semibold tracking-wide">Pengasingan</h3>
+              <p className="text-[#b87333] text-lg mb-1 tracking-wider">1938 - 1942</p>
+              <h3 className="text-[#1c2b3a] font-[family-name:var(--font-heading)] text-3xl font-semibold tracking-wide">Pengasingan</h3>
             </div>
           </div>
           {/* Images Point 2 */}
@@ -90,10 +90,10 @@ export default function SejarahSection() {
 
           {/* --- POINT 3 --- */}
           <div className="absolute top-[680px] left-[50%] w-0 h-0 z-30">
-            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#e5e5e5]" />
+            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#b87333]" />
             <div className="absolute top-0 right-8 -translate-y-1/2 text-right whitespace-nowrap">
-              <p className="text-gray-400 text-lg mb-1 tracking-wider">1945</p>
-              <h3 className="text-white text-3xl font-semibold tracking-wide">Kemerdekaan</h3>
+              <p className="text-[#b87333] text-lg mb-1 tracking-wider">1945</p>
+              <h3 className="text-[#1c2b3a] font-[family-name:var(--font-heading)] text-3xl font-semibold tracking-wide">Kemerdekaan</h3>
             </div>
           </div>
           {/* Images Point 3 */}
@@ -107,15 +107,15 @@ export default function SejarahSection() {
 
         {/* Mobile View (Fallback) */}
         <div className="lg:hidden col-span-1 mt-12 mb-12 flex flex-col gap-16 relative z-20 order-1">
-            <div className="absolute top-0 bottom-0 left-[7px] w-[1px] bg-white/20 z-0" />
+            <div className="absolute top-0 bottom-0 left-[7px] w-[1px] bg-[#2c6e8a]/25 z-0" />
             
             {/* Point 1 */}
             <div className="flex flex-col gap-6 relative z-10">
               <div className="flex items-center gap-6">
-                <div className="w-[15px] h-[15px] rounded-full bg-[#e5e5e5] shrink-0" />
+                <div className="w-[15px] h-[15px] rounded-full bg-[#b87333] shrink-0" />
                 <div>
-                  <p className="text-gray-400 text-sm tracking-wider mb-1">1685 - 1824</p>
-                  <h3 className="text-white text-2xl font-semibold">Masa Inggris</h3>
+                  <p className="text-[#b87333] text-sm tracking-wider mb-1">1685 - 1824</p>
+                  <h3 className="text-[#1c2b3a] font-[family-name:var(--font-heading)] text-2xl font-semibold">Masa Inggris</h3>
                 </div>
               </div>
               <div className="pl-[39px] grid grid-cols-2 gap-4">
@@ -127,10 +127,10 @@ export default function SejarahSection() {
             {/* Point 2 */}
             <div className="flex flex-col gap-6 relative z-10">
               <div className="flex items-center gap-6">
-                <div className="w-[15px] h-[15px] rounded-full bg-[#e5e5e5] shrink-0" />
+                <div className="w-[15px] h-[15px] rounded-full bg-[#b87333] shrink-0" />
                 <div>
-                  <p className="text-gray-400 text-sm tracking-wider mb-1">1938 - 1942</p>
-                  <h3 className="text-white text-2xl font-semibold">Pengasingan</h3>
+                  <p className="text-[#b87333] text-sm tracking-wider mb-1">1938 - 1942</p>
+                  <h3 className="text-[#1c2b3a] font-[family-name:var(--font-heading)] text-2xl font-semibold">Pengasingan</h3>
                 </div>
               </div>
               <div className="pl-[39px]">
@@ -141,10 +141,10 @@ export default function SejarahSection() {
             {/* Point 3 */}
             <div className="flex flex-col gap-6 relative z-10">
               <div className="flex items-center gap-6">
-                <div className="w-[15px] h-[15px] rounded-full bg-[#e5e5e5] shrink-0" />
+                <div className="w-[15px] h-[15px] rounded-full bg-[#b87333] shrink-0" />
                 <div>
-                  <p className="text-gray-400 text-sm tracking-wider mb-1">1945</p>
-                  <h3 className="text-white text-2xl font-semibold">Kemerdekaan</h3>
+                  <p className="text-[#b87333] text-sm tracking-wider mb-1">1945</p>
+                  <h3 className="text-[#1c2b3a] font-[family-name:var(--font-heading)] text-2xl font-semibold">Kemerdekaan</h3>
                 </div>
               </div>
               <div className="pl-[39px] grid grid-cols-2 gap-4">

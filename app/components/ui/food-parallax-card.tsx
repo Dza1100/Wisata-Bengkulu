@@ -55,11 +55,11 @@ export default function FoodParallaxCard({ item }: FoodParallaxCardProps) {
           rotateY,
           transformStyle: 'preserve-3d',
         }}
-        className="relative w-full h-full bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between shadow-2xl cursor-pointer hover:border-zinc-700 transition-colors"
+        className="relative w-full h-full bg-[#f5f0e8] border border-[#b87333]/20 rounded-3xl p-8 flex flex-col justify-between shadow-xl cursor-pointer hover:border-[#b87333]/50 transition-colors"
       >
         {/* Floating "Plate" Image */}
         <motion.div
-          className="absolute -top-12 -right-8 w-40 h-40 md:w-44 md:h-44 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden border-4 border-zinc-900 pointer-events-none z-10"
+          className="absolute -top-12 -right-8 w-40 h-40 md:w-44 md:h-44 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden border-4 border-[#f5f0e8] pointer-events-none z-10"
           style={{ transform: 'translateZ(80px)' }}
           animate={{
             y: [0, -12, 0],
@@ -80,18 +80,18 @@ export default function FoodParallaxCard({ item }: FoodParallaxCardProps) {
 
         {/* Content */}
         <div style={{ transform: 'translateZ(50px)' }} className="mt-6 pr-14 md:pr-16 relative z-0">
-          <span className="inline-block px-3 py-1 bg-zinc-800/80 text-orange-400 text-xs font-bold uppercase tracking-wider rounded-full mb-4">
+          <span className="inline-block px-3 py-1 bg-[#dce8f0] text-[#b87333] text-xs font-bold uppercase tracking-wider rounded-full mb-4 shadow-sm">
             {item.label}
           </span>
-          <h3 className="text-3xl font-black text-white mb-3 leading-tight drop-shadow-md">{item.title}</h3>
-          <p className="text-zinc-400 text-sm leading-relaxed line-clamp-4">
+          <h3 className="text-3xl font-black text-[#1c2b3a] mb-3 leading-tight font-[family-name:var(--font-heading)]">{item.title}</h3>
+          <p className="text-[#3a5060] text-sm leading-relaxed line-clamp-4">
             {item.description}
           </p>
         </div>
 
         {/* Actions */}
         <div style={{ transform: 'translateZ(40px)' }} className="mt-4 pb-2">
-          <button className="px-6 py-2.5 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors font-medium text-sm shadow-lg">
+          <button className="px-6 py-2.5 rounded-full border-2 border-[#2c6e8a] text-[#2c6e8a] hover:bg-[#2c6e8a] hover:text-white transition-colors font-medium text-sm shadow-sm">
             Temukan Restoran
           </button>
         </div>

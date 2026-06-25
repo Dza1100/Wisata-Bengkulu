@@ -1,36 +1,12 @@
 .section {
   padding: 6rem 2rem;
-  background-color: #050505; /* Deep dark background */
+  background-color: #dce8f0; /* Deep dark background */
   color: #fff;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 2;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, #ff007f, #00f0ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 2px;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: #a0a0a0;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .mapWrapper {
@@ -66,7 +42,7 @@
   transform: translate(-50%, -50%);
   font-size: clamp(0.6rem, 1vw, 0.85rem);
   font-weight: 700;
-  color: #111;
+  color: #1c2b3a;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 1);
   pointer-events: none;
   white-space: nowrap;

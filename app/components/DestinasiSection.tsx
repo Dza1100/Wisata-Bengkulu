@@ -55,17 +55,17 @@ const destinasiData: CardItem[] = [
 
 export default function DestinasiSection() {
   return (
-    <section className="bg-[#09090b] py-24 px-6 md:px-12">
+    <section className="bg-[#dce8f0] py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         {/* Header Text */}
         <div className="flex flex-col items-center text-center space-y-4">
-          <span className="text-orange-500 font-bold uppercase tracking-widest text-sm">
+          <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
             Eksplorasi Alam
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white">
-            Jelajahi Pesona <span className="bg-gradient-to-r from-orange-500 to-amber-300 bg-clip-text text-transparent">Bengkulu</span>
+          <h2 className="text-3xl md:text-5xl font-black text-[#1c2b3a] font-[family-name:var(--font-heading)]">
+            Jelajahi Pesona <span className="text-[#2c6e8a]">Bengkulu</span>
           </h2>
-          <p className="text-zinc-400 max-w-2xl text-base md:text-lg">
+          <p className="text-[#3a5060] max-w-2xl text-base md:text-lg">
             Temukan keindahan alam yang belum tersentuh, kekayaan sejarah yang mendalam, dan keajaiban ekologi yang menanti untuk dijelajahi.
           </p>
         </div>

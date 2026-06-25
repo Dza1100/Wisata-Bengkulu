@@ -59,7 +59,7 @@ const slides: Slide[] = [
   },
 ];
 
-const AUTO_PLAY_INTERVAL = 30000; // 30 seconds
+const AUTO_PLAY_INTERVAL = 5000; // 5 seconds
 
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);

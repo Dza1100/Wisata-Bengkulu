@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function TecnoSection() {
   return (
-    <section className="bg-black py-24 px-4 md:px-8 w-full">
+    <section className="bg-[#dce8f0] py-24 px-4 md:px-8 w-full">
       
       {/* Header Text */}
       <div className="flex flex-col items-center text-center space-y-4 mb-16 w-full max-w-[1600px] mx-auto">
-        <span className="text-gray-400 font-bold uppercase tracking-widest text-sm">
+        <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
           Masa Depan
         </span>
-        <h2 className="text-3xl md:text-5xl font-black text-white uppercase">
+        <h2 className="text-3xl md:text-5xl font-black text-[#1c2b3a] uppercase font-[family-name:var(--font-heading)]">
           Potensi Bengkulu
         </h2>
       </div>

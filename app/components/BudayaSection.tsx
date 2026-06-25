@@ -35,18 +35,18 @@ const budayaBengkulu: CardStackItem[] = [
 
 export default function BudayaSection() {
   return (
-    <section className="bg-[#09090b] py-24 px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-[#dce8f0] py-24 px-6 md:px-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Header Text */}
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <span className="text-orange-500 font-bold uppercase tracking-widest text-sm">
+          <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
             Warisan Leluhur
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white">
+          <h2 className="text-3xl md:text-5xl font-black text-[#1c2b3a] font-[family-name:var(--font-heading)]">
             Budaya & Tradisi
           </h2>
-          <p className="text-zinc-400 max-w-2xl text-base md:text-lg">
+          <p className="text-[#3a5060] max-w-2xl text-base md:text-lg">
             Selami kekayaan kearifan lokal Bengkulu yang diwariskan dari generasi ke generasi, memadukan pesona seni, harmoni, dan filosofi kehidupan.
           </p>
         </div>

@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <SejarahSection />
       <DestinasiSection />
       <BudayaSection />
       <KulinerSection />
-      <SejarahSection />
       <TecnoSection />
       <PetaSection />
     </main>
