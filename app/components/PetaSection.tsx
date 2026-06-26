@@ -2,10 +2,13 @@
 
 import { MapPin, Compass } from 'lucide-react';
 import styles from './PetaSection.module.css';
-export default function PetaSection() {
+import { useFadeUp } from './useFadeUp';
 
+export default function PetaSection() {
+  const ref = useFadeUp();
   return (
     <section className={styles.section} id="peta" aria-labelledby="peta-title">
+      <div ref={ref as any} className="fade-up w-full h-full flex flex-col items-center">
       <div className="flex flex-col items-center text-center space-y-4 mb-16 w-full max-w-[1600px] mx-auto">
         <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
           Peta Interaktif
@@ -38,6 +41,7 @@ export default function PetaSection() {
           <span className={styles.regionLabel} style={{ top: '57%', left: '65%' }}>Bengkulu Selatan</span>
           <span className={styles.regionLabel} style={{ top: '72%', left: '65%' }}>Kaur</span>
         </div>
+      </div>
       </div>
     </section>
   );

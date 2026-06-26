@@ -1,8 +1,13 @@
+'use client';
+
 import React from 'react';
+import { useFadeUp } from './useFadeUp';
 
 export default function SejarahSection() {
+  const ref = useFadeUp();
   return (
-    <section className="bg-[#f5f0e8] py-24 px-6 md:px-16 min-h-[100vh] flex flex-col justify-center font-sans relative overflow-hidden">
+    <section className="bg-[#f5f0e8] pb-24 pt-0 px-6 md:px-16 min-h-[100vh] flex flex-col justify-center font-sans relative z-0 overflow-hidden">
+      <div ref={ref as any} className="fade-up w-full h-full flex flex-col justify-center items-center">
       
       {/* Header Text */}
       <div className="flex flex-col items-center text-center space-y-4 mb-16 w-full max-w-[1400px] mx-auto z-20">
@@ -14,10 +19,15 @@ export default function SejarahSection() {
         </h2>
       </div>
 
-      <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 h-full min-h-[900px] relative z-10">
+      <p className="block md:hidden text-sm text-center text-[#3a5060] mb-6 px-4 leading-relaxed">
+        Tiga era yang membentuk identitas Bengkulu — dari masa Kolonial Inggris, 
+        Pengasingan Bung Karno, hingga semangat Kemerdekaan.
+      </p>
+
+      <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8 md:gap-0 h-full min-h-[900px] relative z-10">
         
         {/* Left Column - Text */}
-        <div className="lg:col-span-5 flex flex-col justify-between py-12 lg:py-24 z-30 relative order-2 lg:order-1">
+        <div className="hidden md:flex flex-col justify-between py-12 md:py-24 z-30 relative order-2 md:order-1">
           <div className="max-w-[420px]">
             <p className="text-[#3a5060] text-xl lg:text-[22px] leading-[1.6] font-light tracking-wide">
               Kami telah merangkum perjalanan sejarah yang kaya di Bengkulu untuk Anda.<br />
@@ -34,7 +44,7 @@ export default function SejarahSection() {
         </div>
 
         {/* Right Column - Timeline (Desktop) */}
-        <div className="lg:col-span-7 relative mt-16 lg:mt-0 hidden lg:block h-[900px] z-20 order-1 lg:order-2">
+        <div className="relative mt-16 md:mt-0 hidden md:block h-[900px] z-20 order-1 md:order-2">
           {/* Vertical Line */}
           <div className="absolute top-8 bottom-8 left-[50%] w-[1px] bg-[#2c6e8a]/25" />
 
@@ -154,8 +164,8 @@ export default function SejarahSection() {
             </div>
         </div>
 
+        </div>
       </div>
     </section>
   );
 }
-

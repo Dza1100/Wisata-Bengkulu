@@ -1,3 +1,5 @@
+'use client';
+
 import FoodParallaxCard, { FoodItem } from './ui/food-parallax-card';
 
 const kulinerData: FoodItem[] = [
@@ -45,10 +47,13 @@ const kulinerData: FoodItem[] = [
   }
 ];
 
+import { useFadeUp } from './useFadeUp';
+
 export default function KulinerSection() {
+  const ref = useFadeUp();
   return (
     <section className="bg-[#f5f0e8] py-24 px-6 md:px-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+      <div ref={ref} className="fade-up max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Header Text */}
         <div className="flex flex-col items-center text-center space-y-4 mb-20">

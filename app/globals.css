@@ -23,3 +23,17 @@ body {
   color: var(--ci-ink);
   font-family: var(--font-body);
 }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

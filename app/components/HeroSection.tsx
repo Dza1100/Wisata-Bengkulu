@@ -110,7 +110,13 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className={styles.hero} aria-label="Hero Section Wisata Bengkulu">
+    <section className={`${styles.hero} relative z-10`} aria-label="Hero Section Wisata Bengkulu">
+      <div
+        className="absolute top-0 left-0 right-0 h-32 pointer-events-none z-10"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%)'
+        }}
+      />
       {/* ── Background layers ── */}
       {/* Previous slide (fades out) */}
       {prev && (
@@ -152,7 +158,7 @@ export default function HeroSection() {
           <div className={styles.titleWrapper}>
             <div className={styles.accentBar} aria-hidden="true" />
             <div>
-              <h1 className={styles.title}>{active.title}</h1>
+              <h1 className={`${styles.title} font-[family-name:var(--font-heading)]`}>{active.title}</h1>
             </div>
           </div>
           
@@ -230,6 +236,13 @@ export default function HeroSection() {
           />
         ))}
       </div>
+
+      <div
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-10"
+        style={{
+          background: 'linear-gradient(to bottom, transparent 0%, #f5f0e8 100%)'
+        }}
+      />
     </section>
   );
 }

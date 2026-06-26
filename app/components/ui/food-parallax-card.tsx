@@ -55,7 +55,7 @@ export default function FoodParallaxCard({ item }: FoodParallaxCardProps) {
           rotateY,
           transformStyle: 'preserve-3d',
         }}
-        className="relative w-full h-full bg-[#f5f0e8] border border-[#b87333]/20 rounded-3xl p-8 flex flex-col justify-between shadow-xl cursor-pointer hover:border-[#b87333]/50 transition-colors"
+        className="relative w-full h-full bg-[#f5f0e8] border border-[#2c6e8a]/15 rounded-3xl p-8 flex flex-col justify-between shadow-sm cursor-pointer transition-colors"
       >
         {/* Floating "Plate" Image */}
         <motion.div
@@ -91,7 +91,7 @@ export default function FoodParallaxCard({ item }: FoodParallaxCardProps) {
 
         {/* Actions */}
         <div style={{ transform: 'translateZ(40px)' }} className="mt-4 pb-2">
-          <button className="px-6 py-2.5 rounded-full border-2 border-[#2c6e8a] text-[#2c6e8a] hover:bg-[#2c6e8a] hover:text-white transition-colors font-medium text-sm shadow-sm">
+          <button className="px-6 py-2.5 rounded-full bg-[#2c6e8a] text-white hover:bg-[#1e5470] transition-colors font-semibold tracking-wide text-sm shadow-sm">
             Temukan Restoran
           </button>
         </div>

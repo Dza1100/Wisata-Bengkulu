@@ -1,3 +1,5 @@
+'use client';
+
 import { Waves, Castle, Mountain, Trees, Sunset, Home, Palmtree } from 'lucide-react';
 import ExpandingCards, { CardItem } from './expanding-cards';
 
@@ -53,10 +55,13 @@ const destinasiData: CardItem[] = [
   },
 ];
 
+import { useFadeUp } from './useFadeUp';
+
 export default function DestinasiSection() {
+  const ref = useFadeUp();
   return (
     <section className="bg-[#dce8f0] py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+      <div ref={ref} className="fade-up max-w-7xl mx-auto flex flex-col gap-12">
         {/* Header Text */}
         <div className="flex flex-col items-center text-center space-y-4">
           <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">

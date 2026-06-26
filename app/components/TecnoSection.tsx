@@ -1,15 +1,20 @@
+'use client';
+
 import React from 'react';
+import { useFadeUp } from './useFadeUp';
 
 export default function TecnoSection() {
+  const ref = useFadeUp();
   return (
-    <section className="bg-[#dce8f0] py-24 px-4 md:px-8 w-full">
+    <section className="bg-[#1c2b3a] py-24 px-4 md:px-8 w-full">
+      <div ref={ref as any} className="fade-up w-full h-full flex flex-col items-center">
       
       {/* Header Text */}
       <div className="flex flex-col items-center text-center space-y-4 mb-16 w-full max-w-[1600px] mx-auto">
         <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
           Masa Depan
         </span>
-        <h2 className="text-3xl md:text-5xl font-black text-[#1c2b3a] uppercase font-[family-name:var(--font-heading)]">
+        <h2 className="text-3xl md:text-5xl font-black text-[#f5f0e8] uppercase font-[family-name:var(--font-heading)]">
           Potensi Bengkulu
         </h2>
       </div>
@@ -39,7 +44,7 @@ export default function TecnoSection() {
             
             {/* Bottom Text */}
             <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide font-[family-name:var(--font-heading)]">
                 Plan
               </h2>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-lg">
@@ -72,7 +77,7 @@ export default function TecnoSection() {
             
             {/* Bottom Text */}
             <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide font-[family-name:var(--font-heading)]">
                 Play
               </h2>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-lg">
@@ -105,7 +110,7 @@ export default function TecnoSection() {
             
             {/* Bottom Text */}
             <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide font-[family-name:var(--font-heading)]">
                 Explore
               </h2>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-lg">
@@ -115,6 +120,7 @@ export default function TecnoSection() {
           </div>
         </div>
 
+        </div>
       </div>
     </section>
   );

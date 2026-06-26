@@ -1,3 +1,5 @@
+'use client';
+
 import { CardStack, CardStackItem } from './ui/card-stack';
 
 const budayaBengkulu: CardStackItem[] = [
@@ -33,10 +35,13 @@ const budayaBengkulu: CardStackItem[] = [
   },
 ];
 
+import { useFadeUp } from './useFadeUp';
+
 export default function BudayaSection() {
+  const ref = useFadeUp();
   return (
     <section className="bg-[#dce8f0] py-24 px-6 md:px-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+      <div ref={ref} className="fade-up max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Header Text */}
         <div className="flex flex-col items-center text-center space-y-4 mb-16">

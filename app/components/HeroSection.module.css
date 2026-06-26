@@ -53,9 +53,9 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.70) 0%,
-    rgba(0, 0, 0, 0.30) 60%,
-    rgba(0, 0, 0, 0.50) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.60) 60%,
+    rgba(0, 0, 0, 0.75) 100%
   );
   z-index: 2;
 }
@@ -433,24 +433,6 @@
   }
 
   .orbitalNav {
-    width: 100px;
-  }
-
-  .orbitThumb {
-    width: 45px;
-    height: 45px;
-  }
-
-  .orbitItemActive .orbitThumb {
-    width: 45px;
-    height: 45px;
-  }
-
-  .orbitRing {
-    inset: -10px;
-  }
-
-  .orbitConnector {
     display: none;
   }
 }

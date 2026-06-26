@@ -49,7 +49,7 @@ export default function ExpandingCards({ items }: ExpandingCardsProps) {
               key={item.id}
               onClick={() => setActiveIndex(index)}
               onMouseEnter={() => setActiveIndex(index)}
-              className="relative rounded-3xl overflow-hidden cursor-pointer w-full h-full"
+              className="relative rounded-3xl overflow-hidden cursor-pointer w-full h-full border border-[#2c6e8a]/15 shadow-sm"
             >
               {/* Background Image */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -70,7 +70,7 @@ export default function ExpandingCards({ items }: ExpandingCardsProps) {
                   isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'
                 }`}
               >
-                <h3 className="text-white font-bold text-lg md:text-xl whitespace-nowrap md:-rotate-90 md:origin-bottom-left transition-transform duration-700 drop-shadow-md">
+                <h3 className="text-white font-bold text-lg md:text-xl whitespace-nowrap md:-rotate-90 md:origin-bottom-left transition-transform duration-700 drop-shadow-md font-[family-name:var(--font-heading)]">
                   {item.title}
                 </h3>
               </div>
@@ -85,7 +85,7 @@ export default function ExpandingCards({ items }: ExpandingCardsProps) {
                   <div className="p-3 md:p-4 bg-orange-500 rounded-full text-white shadow-xl">
                     {item.icon}
                   </div>
-                  <h2 className="text-white text-2xl md:text-3xl font-black leading-tight drop-shadow-lg">
+                  <h2 className="text-white text-2xl md:text-3xl font-black leading-tight drop-shadow-lg font-[family-name:var(--font-heading)]">
                     {item.title}
                   </h2>
                 </div>
