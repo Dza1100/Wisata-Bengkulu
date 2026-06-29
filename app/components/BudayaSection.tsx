@@ -1,5 +1,7 @@
 'use client';
 
+import { useState, useCallback, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { CardStack, CardStackItem } from './ui/card-stack';
 
 const budayaBengkulu: CardStackItem[] = [
@@ -39,12 +41,35 @@ import { useFadeUp } from './useFadeUp';
 
 export default function BudayaSection() {
   const ref = useFadeUp();
+  const [mobileActive, setMobileActive] = useState(0);
+  const [cardW, setCardW] = useState(320);
+  const cardContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const measure = () => {
+      if (cardContainerRef.current) {
+        setCardW(cardContainerRef.current.offsetWidth);
+      }
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setMobileActive((a) => (a - 1 + budayaBengkulu.length) % budayaBengkulu.length);
+  }, []);
+
+  const handleNext = useCallback(() => {
+    setMobileActive((a) => (a + 1) % budayaBengkulu.length);
+  }, []);
+
   return (
-    <section className="bg-[#dce8f0] py-24 px-6 md:px-12 relative overflow-hidden">
+    <section id="budaya" className="bg-[#dce8f0] py-10 md:py-24 px-6 md:px-12 relative overflow-hidden">
       <div ref={ref} className="fade-up max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Header Text */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-16">
+        <div className="flex flex-col items-center text-center space-y-3 mb-8 md:mb-16">
           <span className="text-[#b87333] font-bold uppercase tracking-widest text-sm">
             Warisan Leluhur
           </span>
@@ -56,8 +81,8 @@ export default function BudayaSection() {
           </p>
         </div>
 
-        {/* Tumpukan Kartu (Card Stack) */}
-        <div className="w-full max-w-2xl mx-auto flex justify-center">
+        {/* Desktop: original card stack — untouched */}
+        <div className="hidden md:flex w-full max-w-2xl mx-auto justify-center">
           <CardStack 
             items={budayaBengkulu} 
             initialIndex={0}
@@ -66,6 +91,72 @@ export default function BudayaSection() {
             pauseOnHover={true}
             showDots={true} 
           />
+        </div>
+
+        {/* Mobile: full-width card with overlay arrows */}
+        <div className="flex md:hidden w-full flex-col items-center gap-4">
+          {/* Card with overlay arrows inside — measured container */}
+          <div ref={cardContainerRef} className="relative w-full rounded-2xl overflow-hidden" style={{ height: 400 }}>
+            {/* CardStack with measured numeric width */}
+            <CardStack
+              key={`mobile-${mobileActive}-${cardW}`}
+              items={budayaBengkulu}
+              initialIndex={mobileActive}
+              cardWidth={cardW}
+              cardHeight={400}
+              maxVisible={1}
+              overlap={0}
+              spreadDeg={0}
+              depthPx={0}
+              tiltXDeg={0}
+              activeLiftPx={0}
+              activeScale={1}
+              inactiveScale={1}
+              autoAdvance={false}
+              showDots={false}
+              loop={true}
+            />
+
+            {/* Prev arrow — centered on left edge */}
+            <button
+              id="budaya-prev-btn"
+              onClick={handlePrev}
+              aria-label="Sebelumnya"
+              className="absolute left-3 z-20 w-9 h-9 rounded-full bg-white/25 hover:bg-white/50 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 active:scale-95 border border-white/30"
+              style={{ top: '50%', transform: 'translateY(-50%)' }}
+            >
+              <ChevronLeft className="w-5 h-5 drop-shadow" />
+            </button>
+
+            {/* Next arrow — centered on right edge */}
+            <button
+              id="budaya-next-btn"
+              onClick={handleNext}
+              aria-label="Selanjutnya"
+              className="absolute right-3 z-20 w-9 h-9 rounded-full bg-white/25 hover:bg-white/50 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 active:scale-95 border border-white/30"
+              style={{ top: '50%', transform: 'translateY(-50%)' }}
+            >
+              <ChevronRight className="w-5 h-5 drop-shadow" />
+            </button>
+          </div>
+
+
+          {/* Dots indicator for mobile */}
+          <div className="flex items-center gap-2">
+            {budayaBengkulu.map((item, idx) => (
+              <button
+                key={item.id}
+                id={`budaya-dot-${idx}`}
+                onClick={() => setMobileActive(idx)}
+                aria-label={`Lihat ${item.title}`}
+                className={`h-2 w-2 rounded-full transition-all duration-200 ${
+                  idx === mobileActive
+                    ? 'bg-[#b87333] w-4'
+                    : 'bg-[#1c2b3a]/30 hover:bg-[#1c2b3a]/50'
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
       </div>

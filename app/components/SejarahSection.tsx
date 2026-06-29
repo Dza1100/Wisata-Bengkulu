@@ -6,7 +6,7 @@ import { useFadeUp } from './useFadeUp';
 export default function SejarahSection() {
   const ref = useFadeUp();
   return (
-    <section className="bg-[#f5f0e8] pb-24 pt-0 px-6 md:px-16 min-h-[100vh] flex flex-col justify-center font-sans relative z-0 overflow-hidden">
+    <section id="sejarah" className="bg-[#f5f0e8] pb-24 pt-0 px-6 md:px-16 min-h-[100vh] flex flex-col justify-center font-sans relative z-0 overflow-hidden">
       <div ref={ref as any} className="fade-up w-full h-full flex flex-col justify-center items-center">
       
       {/* Header Text */}

@@ -52,7 +52,7 @@ import { useFadeUp } from './useFadeUp';
 export default function KulinerSection() {
   const ref = useFadeUp();
   return (
-    <section className="bg-[#f5f0e8] py-24 px-6 md:px-12 overflow-hidden">
+    <section id="kuliner" className="bg-[#f5f0e8] py-24 px-6 md:px-12 overflow-hidden">
       <div ref={ref} className="fade-up max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Header Text */}
@@ -69,7 +69,7 @@ export default function KulinerSection() {
         </div>
 
         {/* Grid Layout Kuliner */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 w-full mt-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-12 md:gap-y-16 w-full mt-6">
           {kulinerData.map((item) => (
             <FoodParallaxCard key={item.id} item={item} />
           ))}

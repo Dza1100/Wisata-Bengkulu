@@ -6,7 +6,7 @@ import { useFadeUp } from './useFadeUp';
 export default function TecnoSection() {
   const ref = useFadeUp();
   return (
-    <section className="bg-[#1c2b3a] py-24 px-4 md:px-8 w-full">
+    <section id="teknologi" className="bg-[#1c2b3a] py-24 px-4 md:px-8 w-full">
       <div ref={ref as any} className="fade-up w-full h-full flex flex-col items-center">
       
       {/* Header Text */}

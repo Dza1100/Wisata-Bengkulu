@@ -25,7 +25,7 @@ export default function PetaSection() {
         {/* Inner wrapper to match image size exactly for perfect % positioning */}
         <div className={styles.mapInner}>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/a/a8/17.00.00_Bengkulu.svg"
+            src="/bengkulu_map.svg"
             alt="Bengkulu Province Silhouette"
             className={styles.mapImage}
           />

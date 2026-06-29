@@ -110,7 +110,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className={`${styles.hero} relative z-10`} aria-label="Hero Section Wisata Bengkulu">
+    <section id="home" className={`${styles.hero} relative z-10`} aria-label="Hero Section Wisata Bengkulu">
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none z-10"
         style={{
